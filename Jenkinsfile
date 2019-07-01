@@ -19,6 +19,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Analyzing'){
+            steps{
+                sh '''
+                    echo "Analyzing the Performance of App"
+                    sleep 3
+                '''
+            }
+        }
+
         stage('Deploy'){
             steps{
                 sh '''
