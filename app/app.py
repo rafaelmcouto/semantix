@@ -38,10 +38,9 @@ def initdb(filename="data.json"):
     import json
     db = DB()
     with open(filename, "r") as f:
-        for l in f:
-            q_dict = json.loads(l)
-            for e in q_dict["data"]:
-                db.add((e['review_id'], e['date'], e['message']))
+        q_dict = json.load(f)
+    for e in q_dict["data"]:
+        db.add((e['review_id'], e['date'], e['message']))
     return db
 
 class SearchHandler(RequestHandler):
