@@ -2,28 +2,20 @@ pipeline {
     agent any
 
     stages{
+        stage('Pushing'){
+            steps{
+                sh '''
+                    echo "Pushing the App"
+                    sleep 3
+                '''
+            }
+        }
+
+    stages{
         stage('Build'){
             steps{
                 sh '''
                     echo "Building the App"
-                    sleep 3
-                '''
-            }
-        }
-
-        stage('Testing'){
-            steps{
-                sh '''
-                    echo "Testing the App"
-                    sleep 3
-                '''
-            }
-        }
-
-        stage('Analyzing'){
-            steps{
-                sh '''
-                    echo "Analyzing the Performance of App"
                     sleep 3
                 '''
             }

@@ -2,25 +2,10 @@
 
 Obrigado por considerar a posição do Engenheiro de DevOps na Semantix! Nós projetamos este teste para ter uma melhor idéia sobre sua experiência e ter uma noção de como você aborda problemas que podem aparecer em nosso dia a dia.
 
-Você tem dois dias para concluir a tarefa e pode perguntar via email se algo não estiver claro.
+### Pré Requisitos:
 
-* Por favor, confirme o recebimento do email.
-
-
-
-## Código de uma API de dados
-
-Para este exercício, assumimos um ambiente de shell bash (ou bash like), com
-acesso ao Git, Python, Curl e Make.
-
-O aplicativo (app.py) incluído neste pacote é um serviço feito em Python utilizando um framework específico em python. Rescreva o código, utilizando qualquer linguagem ou framework que prefira, de modo a que a busca em tal aplicação tenha performance melhor e de modo que seja executável dentro de um container docker. 
-
-Para obter o conjunto de dados para trabalhar, por favor, execute este comando
-
-    curl -w '\ n' -s "https://www.getyourguide.com/-t62214/reviews.json?&count=50&page=[0-50]&rating=0&type=&sortBy=&direction=&remove=false" >> data.json
-
-Com o arquivo “data.json” no lugar, por favor, dê uma olhada no (README.md)
-incluído no projeto que explica como executar o serviço.
+- Sistema Operacional Linux
+- Docker ( https://get.docker.com/ )
 
 ### Tarefa 1 - Melhoria
 
@@ -32,8 +17,14 @@ A implementação melhorada deve ter essas características.
 - Forneça o repositório no github ou gitlab com instruções de uso.
 - Caso tenha uma idéia melhor que aumentaria ainda mais a performance do app mas que não conseguiu implementar tendo em vista as restrições anexe sua idéia nas explicações. 
 
+### Resposta da Tarefa 1 - Melhoria:
 
-## Tarefa 2 -  Criação de Pipeline 
+- O Dockerfile utilizado está no repositório, a imagem utilizada foi python:3.6-alpine.
+- Foi criado um repo no dockerhub com a imagem preparada para execução, bastando apenas executar o container e expor a porta.
+- docker run -d -p 4000:8888 rafaelmcouto/semantix_python:0.1 
+- curl localhost:4000/s/tour
+
+### Tarefa 2 - Criação de Pipeline 
 
 Forneça um container com o seu CI/CD preferido contendo um pipeline que tenha os seguintes passos: 
 
@@ -43,7 +34,10 @@ Forneça um container com o seu CI/CD preferido contendo um pipeline que tenha o
 
 Forneça o container com o seu CI/CD (tar) e instruções de implantação em um servidor linux (caso queira subir os arquivos em outro Git Repo fique a vontado)
 
+### Resposta da Tarefa 2 - Criação de Pipeline 
+
+Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado.
+Para isso, basta executar o comando abaixo:
+sudo chown 1000:1000 /var/run/docker.sock
 
 Desejamos boa sorte. 
-
-
