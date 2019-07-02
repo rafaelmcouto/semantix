@@ -36,16 +36,17 @@ Forneça o container com o seu CI/CD (tar) e instruções de implantação em um
 
 ### Resposta da Tarefa 2 - Criação de Pipeline 
 
-Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado. Para isso, basta executar o comando abaixo:
-
-- sudo chown 1000:1000 /var/run/docker.sock
-
-- Baixar o projeto:
-- git clone https://github.com/rafaelmcouto/semantix.git
+- Descompactar o arquivo zipado: tar -zxf semantix.tar.gz
+- Entrar no diretório semantix: cd semantix
+- Executar os comandos abaixo:
 - docker-compose build
 - docker-compose up -d
 
+
+Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado. Para isso, basta executar o comando abaixo:
+- sudo chown 1000:1000 /var/run/docker.sock
 - Acessar a url:
 - http://localhost:8080 ( Jenkins )
+- A configuração está feita para criar um login e senha de acesso
 - Clicar no Job semantix
 - Build now
