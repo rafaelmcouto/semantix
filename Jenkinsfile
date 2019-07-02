@@ -6,7 +6,6 @@ pipeline {
             steps{
                 sh '''
                     echo "Pushing the App"
-                    sleep 3
                 '''
             }
         }
@@ -14,7 +13,8 @@ pipeline {
        stage('Build'){
             steps{
                 sh '''
-                    echo "Building the App"
+                    echo "Building the App and Testing"
+                    ./builds/build.sh
                     sleep 3
                 '''
             }

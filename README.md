@@ -38,9 +38,12 @@ Forneça o container com o seu CI/CD (tar) e instruções de implantação em um
 
 Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado. Para isso, basta executar o comando abaixo:
 
-sudo chown 1000:1000 /var/run/docker.sock
+- sudo chown 1000:1000 /var/run/docker.sock
 
 - Baixar o projeto:
 - git clone https://github.com/rafaelmcouto/semantix.git
 - docker-compose build
 - docker-compose up -d
+
+- Acessar a url:
+- http://localhost:8080 ( Jenkins )
