@@ -47,3 +47,5 @@ Para o container Jenkins executar comandos docker, ele precisa ter acesso ao soc
 
 - Acessar a url:
 - http://localhost:8080 ( Jenkins )
+- Clicar no Job semantix
+- Build now

@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     stages{
-        stage('Pushing'){
+        stage('Pulling'){
             steps{
                 sh '''
-                    echo "Pushing the App"
+                    echo "Pulling the App"
                 '''
             }
         }
@@ -13,9 +13,8 @@ pipeline {
        stage('Build'){
             steps{
                 sh '''
-                    echo "Building the App and Testing"
-                    ./builds/build.sh
-                    sleep 3
+                    echo "Building the App"
+                    ./scripts/build.sh
                 '''
             }
         }
@@ -23,8 +22,8 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh '''
-                    echo "Deploying the App"
-                    sleep 3
+                    echo "Deploying the App and making a simple cURL"
+                    ./scripts/deploy.sh
                 '''
             }
         }
