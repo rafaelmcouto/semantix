@@ -11,8 +11,7 @@ pipeline {
             }
         }
 
-    stages{
-        stage('Build'){
+       stage('Build'){
             steps{
                 sh '''
                     echo "Building the App"

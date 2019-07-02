@@ -19,7 +19,7 @@ A implementação melhorada deve ter essas características.
 
 ### Resposta da Tarefa 1 - Melhoria:
 
-- O Dockerfile utilizado está no repositório, a imagem utilizada foi python:3.6-alpine.
+- O Dockerfile utilizado está no repositório do docker hub, a imagem utilizada foi python:3.6-alpine.
 - Foi criado um repo no dockerhub com a imagem preparada para execução, bastando apenas executar o container e expor a porta.
 - docker run -d -p 4000:8888 rafaelmcouto/semantix_python:0.1 
 - curl localhost:4000/s/tour
@@ -36,8 +36,11 @@ Forneça o container com o seu CI/CD (tar) e instruções de implantação em um
 
 ### Resposta da Tarefa 2 - Criação de Pipeline 
 
-Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado.
-Para isso, basta executar o comando abaixo:
+Para o container Jenkins executar comandos docker, ele precisa ter acesso ao sock que está compartilhado. Para isso, basta executar o comando abaixo:
+
 sudo chown 1000:1000 /var/run/docker.sock
 
-Desejamos boa sorte. 
+- Baixar o projeto:
+- git clone https://github.com/rafaelmcouto/semantix.git
+- docker-compose build
+- docker-compose up -d
