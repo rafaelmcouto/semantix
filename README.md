@@ -19,8 +19,8 @@ A implementação melhorada deve ter essas características.
 
 ### Resposta da Tarefa 1 - Melhoria:
 
-- O Dockerfile utilizado está no repositório do docker hub, a imagem utilizada foi python:3.6-alpine.
-- Foi criado um repo no dockerhub com a imagem preparada para execução, bastando apenas executar o container e expor a porta.
+- O Dockerfile utilizado está no diretório app.
+- Foi criado um repo no dockerhub com a imagem ( python:3.6-alpine ) preparada para execução, bastando apenas executar o container e expor a porta.
 - docker run -d -p 4000:8888 rafaelmcouto/semantix_python:0.1 
 - curl localhost:4000/s/tour
 
